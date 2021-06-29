@@ -1,0 +1,278 @@
+[
+  {
+    "jedi": "Luke Skywalker",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/1/",
+      "name": "Tatooine",
+      "rotation_period": 23,
+      "orbital_period": 304.0,
+      "diameter": 10465,
+      "climate": [
+        "arid"
+      ],
+      "gravity": "1 standard",
+      "terrain": [
+        "desert"
+      ],
+      "surface_water": 1.0,
+      "population": 200000
+    }
+  },
+  {
+    "jedi": "Obi-Wan Kenobi",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/20/",
+      "name": "Stewjon",
+      "rotation_period": null,
+      "orbital_period": null,
+      "diameter": 0,
+      "climate": [
+        "temperate"
+      ],
+      "gravity": "1 standard",
+      "terrain": [
+        "grass"
+      ],
+      "surface_water": null,
+      "population": null
+    }
+  },
+  {
+    "jedi": "Anakin Skywalker",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/1/",
+      "name": "Tatooine",
+      "rotation_period": 23,
+      "orbital_period": 304.0,
+      "diameter": 10465,
+      "climate": [
+        "arid"
+      ],
+      "gravity": "1 standard",
+      "terrain": [
+        "desert"
+      ],
+      "surface_water": 1.0,
+      "population": 200000
+    }
+  },
+  {
+    "jedi": "Yoda",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/28/",
+      "name": "unknown",
+      "rotation_period": 0,
+      "orbital_period": 0.0,
+      "diameter": 0,
+      "climate": [
+        "unknown"
+      ],
+      "gravity": "unknown",
+      "terrain": [
+        "unknown"
+      ],
+      "surface_water": null,
+      "population": null
+    }
+  },
+  {
+    "jedi": "Qui-Gon Jinn",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/28/",
+      "name": "unknown",
+      "rotation_period": 0,
+      "orbital_period": 0.0,
+      "diameter": 0,
+      "climate": [
+        "unknown"
+      ],
+      "gravity": "unknown",
+      "terrain": [
+        "unknown"
+      ],
+      "surface_water": null,
+      "population": null
+    }
+  },
+  {
+    "jedi": "Mace Windu",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/42/",
+      "name": "Haruun Kal",
+      "rotation_period": 25,
+      "orbital_period": 383.0,
+      "diameter": 10120,
+      "climate": [
+        "temperate"
+      ],
+      "gravity": "0.98",
+      "terrain": [
+        "toxic cloudsea",
+        "plateaus",
+        "volcanoes"
+      ],
+      "surface_water": null,
+      "population": 705300
+    }
+  },
+  {
+    "jedi": "Ki-Adi-Mundi",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/43/",
+      "name": "Cerea",
+      "rotation_period": 27,
+      "orbital_period": 386.0,
+      "diameter": null,
+      "climate": [
+        "temperate"
+      ],
+      "gravity": "1",
+      "terrain": [
+        "verdant"
+      ],
+      "surface_water": 20.0,
+      "population": 450000000
+    }
+  },
+  {
+    "jedi": "Kit Fisto",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/44/",
+      "name": "Glee Anselm",
+      "rotation_period": 33,
+      "orbital_period": 206.0,
+      "diameter": 15600,
+      "climate": [
+        "tropical",
+        "temperate"
+      ],
+      "gravity": "1",
+      "terrain": [
+        "lakes",
+        "islands",
+        "swamps",
+        "seas"
+      ],
+      "surface_water": 80.0,
+      "population": 500000000
+    }
+  },
+  {
+    "jedi": "Eeth Koth",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/45/",
+      "name": "Iridonia",
+      "rotation_period": 29,
+      "orbital_period": 413.0,
+      "diameter": null,
+      "climate": [
+        "unknown"
+      ],
+      "gravity": "unknown",
+      "terrain": [
+        "rocky canyons",
+        "acid pools"
+      ],
+      "surface_water": null,
+      "population": null
+    }
+  },
+  {
+    "jedi": "Adi Gallia",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/9/",
+      "name": "Coruscant",
+      "rotation_period": 24,
+      "orbital_period": 368.0,
+      "diameter": 12240,
+      "climate": [
+        "temperate"
+      ],
+      "gravity": "1 standard",
+      "terrain": [
+        "cityscape",
+        "mountains"
+      ],
+      "surface_water": null,
+      "population": 1000000000000
+    }
+  },
+  {
+    "jedi": "Saesee Tiin",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/47/",
+      "name": "Iktotch",
+      "rotation_period": 22,
+      "orbital_period": 481.0,
+      "diameter": null,
+      "climate": [
+        "arid",
+        "rocky",
+        "windy"
+      ],
+      "gravity": "1",
+      "terrain": [
+        "rocky"
+      ],
+      "surface_water": null,
+      "population": null
+    }
+  },
+  {
+    "jedi": "Yarael Poof",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/48/",
+      "name": "Quermia",
+      "rotation_period": null,
+      "orbital_period": null,
+      "diameter": null,
+      "climate": [
+        "unknown"
+      ],
+      "gravity": "unknown",
+      "terrain": [
+        "unknown"
+      ],
+      "surface_water": null,
+      "population": null
+    }
+  },
+  {
+    "jedi": "Plo Koon",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/49/",
+      "name": "Dorin",
+      "rotation_period": 22,
+      "orbital_period": 409.0,
+      "diameter": 13400,
+      "climate": [
+        "temperate"
+      ],
+      "gravity": "1",
+      "terrain": [
+        "unknown"
+      ],
+      "surface_water": null,
+      "population": null
+    }
+  },
+  {
+    "jedi": "Rey",
+    "homeworld": {
+      "url": "https://swapi.py4e.com/api/planets/28/",
+      "name": "unknown",
+      "rotation_period": 0,
+      "orbital_period": 0.0,
+      "diameter": 0,
+      "climate": [
+        "unknown"
+      ],
+      "gravity": "unknown",
+      "terrain": [
+        "unknown"
+      ],
+      "surface_water": null,
+      "population": null
+    }
+  }
+]

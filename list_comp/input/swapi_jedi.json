@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Luke Skywalker",
+    "height": 172,
+    "mass": 77,
+    "hair_color": ["blond"],
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "19BBY",
+    "death_year": "34ABY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/1/",
+    "species": [
+      "https://swapi.py4e.com/api/species/1/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/1/"
+  },
+  {
+    "name": "Obi-Wan Kenobi",
+    "height": 182,
+    "mass": 77,
+    "hair_color": ["auburn", "white"],
+    "skin_color": "fair",
+    "eye_color": "blue-gray",
+    "birth_year": "57BBY",
+    "death_year": "0BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/20/",
+    "species": [
+      "https://swapi.py4e.com/api/species/1/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/10/"
+  },
+  {
+    "name": "Anakin Skywalker",
+    "height": 188,
+    "mass": 84,
+    "hair_color": ["blond"],
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "41.9BBY",
+    "death_year": "4ABY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/1/",
+    "species": [
+      "https://swapi.py4e.com/api/species/1/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/11/"
+  },
+  {
+    "name": "Yoda",
+    "height": 66,
+    "mass": 17,
+    "hair_color": ["white"],
+    "skin_color": "green",
+    "eye_color": "brown",
+    "birth_year": "896BBY",
+    "death_year": "4ABY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/28/",
+    "species": [
+      "https://swapi.py4e.com/api/species/6/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/20/"
+  },
+  {
+    "name": "Qui-Gon Jinn",
+    "height": 193,
+    "mass": 89,
+    "hair_color": ["brown"],
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "92BBY",
+    "death_year": "32BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/28/",
+    "species": [
+      "https://swapi.py4e.com/api/species/1/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/32/"
+  },
+  {
+    "name": "Mace Windu",
+    "height": 188,
+    "mass": 84,
+    "hair_color": ["none"],
+    "skin_color": "dark",
+    "eye_color": "brown",
+    "birth_year": "72BBY",
+    "death_year": "19BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/42/",
+    "species": [
+      "https://swapi.py4e.com/api/species/1/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/51/"
+  },
+  {
+    "name": "Ki-Adi-Mundi",
+    "height": 198,
+    "mass": 82,
+    "hair_color": ["white"],
+    "skin_color": "pale",
+    "eye_color": "yellow",
+    "birth_year": "92BBY",
+    "death_year": "19BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/43/",
+    "species": [
+      "https://swapi.py4e.com/api/species/20/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/52/"
+  },
+  {
+    "name": "Kit Fisto",
+    "height": 196,
+    "mass": 87,
+    "hair_color": ["none"],
+    "skin_color": "green",
+    "eye_color": "black",
+    "birth_year": null,
+    "death_year": "19BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/44/",
+    "species": [
+      "https://swapi.py4e.com/api/species/21/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/53/"
+  },
+  {
+    "name": "Eeth Koth",
+    "height": 171,
+    "mass": null,
+    "hair_color": ["black"],
+    "skin_color": "brown",
+    "eye_color": "brown",
+    "birth_year": null,
+    "death_year": "14BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/45/",
+    "species": [
+      "https://swapi.py4e.com/api/species/22/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/54/"
+  },
+  {
+    "name": "Adi Gallia",
+    "height": 184,
+    "mass": 50,
+    "hair_color": ["none"],
+    "skin_color": "dark",
+    "eye_color": "blue",
+    "birth_year": null,
+    "death_year": "20BBY",
+    "gender": "female",
+    "homeworld": "https://swapi.py4e.com/api/planets/9/",
+    "species": [
+      "https://swapi.py4e.com/api/species/23/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/55/"
+  },
+  {
+    "name": "Saesee Tiin",
+    "height": 188,
+    "mass": null,
+    "hair_color": ["none"],
+    "skin_color": "pale",
+    "eye_color": "orange",
+    "birth_year": null,
+    "death_year": "19BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/47/",
+    "species": [
+      "https://swapi.py4e.com/api/species/24/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/56/"
+  },
+  {
+    "name": "Yarael Poof",
+    "height": 264,
+    "mass": null,
+    "hair_color": ["none"],
+    "skin_color": "white",
+    "eye_color": "yellow",
+    "birth_year": null,
+    "death_year": "32BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/48/",
+    "species": [
+      "https://swapi.py4e.com/api/species/25/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/57/"
+  },
+  {
+    "name": "Plo Koon",
+    "height": 188,
+    "mass": 80,
+    "hair_color": ["none"],
+    "skin_color": "orange",
+    "eye_color": "black",
+    "birth_year": null,
+    "death_year": "19BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.py4e.com/api/planets/49/",
+    "species": [
+      "https://swapi.py4e.com/api/species/26/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/58/"
+  },
+  {
+    "name": "Rey",
+    "height": null,
+    "mass": null,
+    "hair_color": ["brown"],
+    "skin_color": "light",
+    "eye_color": "hazel",
+    "birth_year": "15ABY",
+    "death_year": null,
+    "gender": "female",
+    "homeworld": "https://swapi.py4e.com/api/planets/28/",
+    "species": [
+      "https://swapi.py4e.com/api/species/1/"
+    ],
+    "url": "https://swapi.py4e.com/api/people/85/"
+  }
+]
