@@ -166,14 +166,14 @@ def main():
     # characters in 'x' are replaced by characters in 'y'
     # 'z' is string.punctuation where each character in the string is mapped to None
 
-    translator = str.maketrans('.', ',', string.punctuation)
+    translator = str.maketrans('', '', string.punctuation)
 
     # loop
     data_cleaned_loop = []
 
     for line in data_loop:
-        line.translate(translator)
-        data_cleaned_loop.append(line)
+        cleaned_line = line.translate(translator)
+        data_cleaned_loop.append(cleaned_line)
 
     print(f"\nChallenge 05: loop: last line = {data_cleaned_loop[-1]}")
 
