@@ -152,13 +152,13 @@ def main():
     print(f"\nChallenge 04: loop: data length = {len(data_loop)}")
     print(f"\nChallenge 04: loop: last line = {data_loop[-1]}")
 
-    # data_loop = list(map())
-    # print(f"\nChallenge 04: loop: data length = {len(data_loop)}")
-    # print(f"\nChallenge 04: loop: last line = {data_loop[-1]}")
+    # data_map = list(map())
+    # print(f"\nChallenge 04: map: data length = {len(data_loop)}")
+    # print(f"\nChallenge 04: map: last line = {data_loop[-1]}")
 
-    data_loop = [line for line in open(filepath) if line != '\n']
-    print(f"\nChallenge 04: loop: data length = {len(data_loop)}")
-    print(f"\nChallenge 04: loop: last line = {data_loop[-1]}")
+    data_comp = [line for line in open(filepath) if line != '\n']
+    print(f"\nChallenge 04: comp: data length = {len(data_loop)}")
+    print(f"\nChallenge 04: comp: last line = {data_loop[-1]}")
     # CHALLENGE 05: CLEAN DATA
 
     # 3-argument version of str.maketrans
@@ -178,14 +178,14 @@ def main():
     print(f"\nChallenge 05: loop: last line = {data_cleaned_loop[-1]}")
 
     # map()
-    # data_cleaned_map = list(map())
+    # data_cleaned_map = list(map(, data_map))
 
     # print(f"\nChallenge 05: map(): last line = {data_cleaned_map[-1]}")
 
     # list comprehension
     data_cleaned_comp = [
         line if ('.' or ',') not in line
-        else line.translate(translator) for line in data_loop
+        else line.translate(translator) for line in data_comp
     ]
 
     print(f"\nChallenge 05: comp: last line = {data_cleaned_comp[-1]}")
@@ -199,7 +199,7 @@ def main():
     # search_term = 'freedom charter'
 
     # filter()
-    lines = None
+    # lines = list(filter(, data_cleaned_loop))
 
     # print(f"\nChallenge 06: filter: search len = {len(lines)}")
     # print(f"\nChallenge 06: filter: search")
@@ -207,7 +207,7 @@ def main():
         # print(f"\n{line}")
 
     # list comprehension
-    lines = None
+    # lines = []
 
     # print(f"\nChallenge 06: comp: search len = {len(lines)}")
     # print(f"\nChallenge 06: comp: search")
