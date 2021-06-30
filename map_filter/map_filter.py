@@ -178,14 +178,17 @@ def main():
     print(f"\nChallenge 05: loop: last line = {data_cleaned_loop[-1]}")
 
     # map()
-    data_cleaned_map = None
+    # data_cleaned_map = list(map())
 
     # print(f"\nChallenge 05: map(): last line = {data_cleaned_map[-1]}")
 
     # list comprehension
-    data_cleaned_comp = None
+    data_cleaned_comp = [
+        line if ('.' or ',') not in line
+        else line.translate(translator) for line in data_loop
+    ]
 
-    # print(f"\nChallenge 05: comp: last line = {data_cleaned_comp[-1]}")
+    print(f"\nChallenge 05: comp: last line = {data_cleaned_comp[-1]}")
 
 
     # CHALLENGE 06: SEARCH (FILTER())
