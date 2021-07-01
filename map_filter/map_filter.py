@@ -153,7 +153,7 @@ def main():
     print(f"\nChallenge 04: loop: data length = {len(data_loop)}")
     print(f"\nChallenge 04: loop: last line = {data_loop[-1]}")
 
-    # data_map = list(map(read_csv(), filepath))
+    # data_map = list(map(, filepath))
     # print(f"\nChallenge 04: map: data length = {len(data_map)}")
     # print(f"\nChallenge 04: map: last line = {data_map[-1]}")
 
