@@ -1,3 +1,4 @@
+from map_filter.umpy_utils import read_csv
 import statistics
 import string
 import umpy_utils as utl
@@ -152,9 +153,9 @@ def main():
     print(f"\nChallenge 04: loop: data length = {len(data_loop)}")
     print(f"\nChallenge 04: loop: last line = {data_loop[-1]}")
 
-    # data_map = list(map())
-    # print(f"\nChallenge 04: map: data length = {len(data_loop)}")
-    # print(f"\nChallenge 04: map: last line = {data_loop[-1]}")
+    # data_map = list(map(read_csv(), filepath))
+    # print(f"\nChallenge 04: map: data length = {len(data_map)}")
+    # print(f"\nChallenge 04: map: last line = {data_map[-1]}")
 
     data_comp = [line for line in open(filepath) if line != '\n']
     print(f"\nChallenge 04: comp: data length = {len(data_loop)}")
@@ -199,7 +200,7 @@ def main():
     # search_term = 'freedom charter'
 
     # filter()
-    # lines = list(filter(, data_cleaned_loop))
+    # lines = list(filter(lambda x: x, data_cleaned_loop))
 
     # print(f"\nChallenge 06: filter: search len = {len(lines)}")
     # print(f"\nChallenge 06: filter: search")
