@@ -1,4 +1,4 @@
-from map_filter.umpy_utils import read_csv
+from umpy_utils import read_csv
 import statistics
 import string
 import umpy_utils as utl
@@ -143,23 +143,33 @@ def main():
 
     # loop
     data_loop = []
+    # data = utl.read_csv(filepath)
+    # # print(data)
+    # for line in data:
+    #     if line != []:
+    #         data_loop.append(line)
+    # works (ish)? returns list of sentences rather than line as a single string
+
     with open(filepath, 'r', newline='', encoding='utf-8') as file_obj:
         for line in file_obj:
-            if line == "\n":
-                pass
-            else:
+            if line != "\r\n":
                 data_loop.append(line)
+    # was getting 115, now getting 225 and including blank lines? # solved
+    # logic works in list comp but not loop? # solved
+    # print(data_loop) # blank character = "\r\n"
 
     print(f"\nChallenge 04: loop: data length = {len(data_loop)}")
     print(f"\nChallenge 04: loop: last line = {data_loop[-1]}")
 
-    # data_map = list(map(, filepath))
-    # print(f"\nChallenge 04: map: data length = {len(data_map)}")
-    # print(f"\nChallenge 04: map: last line = {data_map[-1]}")
+    data_map = list(map(lambda x: (x != "\r\n"), open(filepath))) #list of boolean values ?
+    # returning whether each line is empty rather than line content ?
+    print(f"\nChallenge 04: map: data length = {len(data_map)}")
+    print(f"\nChallenge 04: map: last line = {data_map[-1]}") # getting 225 & boolean?
 
-    data_comp = [line for line in open(filepath) if line != '\n']
-    print(f"\nChallenge 04: comp: data length = {len(data_loop)}")
-    print(f"\nChallenge 04: comp: last line = {data_loop[-1]}")
+    data_comp = [line for line in open(filepath) if line != "\n"]
+    # this works in comp but not loop?
+    print(f"\nChallenge 04: comp: data length = {len(data_comp)}")
+    print(f"\nChallenge 04: comp: last line = {data_comp[-1]}")
     # CHALLENGE 05: CLEAN DATA
 
     # 3-argument version of str.maketrans
@@ -179,7 +189,7 @@ def main():
     print(f"\nChallenge 05: loop: last line = {data_cleaned_loop[-1]}")
 
     # map()
-    # data_cleaned_map = list(map(, data_map))
+    # data_cleaned_map = list(map(lambda x: x.translate(translator), data_map))
 
     # print(f"\nChallenge 05: map(): last line = {data_cleaned_map[-1]}")
 
@@ -194,7 +204,7 @@ def main():
 
     # CHALLENGE 06: SEARCH (FILTER())
 
-    search_term = 'apartheid'
+    # search_term = 'apartheid'
     # search_term = 'white supremacy'
     # search_term = 'communist'
     # search_term = 'freedom charter'
