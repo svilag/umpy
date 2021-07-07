@@ -161,7 +161,7 @@ def main():
     print(f"\nChallenge 04: loop: data length = {len(data_loop)}")
     print(f"\nChallenge 04: loop: last line = {data_loop[-1]}")
 
-    data_map = list(map(lambda x: (x != "\r\n"), open(filepath))) #list of boolean values ?
+    data_map = list(map(lambda x: x != "\n", open(filepath))) #list of boolean values ?
     # returning whether each line is empty rather than line content ?
     print(f"\nChallenge 04: map: data length = {len(data_map)}")
     print(f"\nChallenge 04: map: last line = {data_map[-1]}") # getting 225 & boolean?
