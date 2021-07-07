@@ -152,7 +152,7 @@ def main():
 
     with open(filepath, 'r', newline='', encoding='utf-8') as file_obj:
         for line in file_obj:
-            if line != "\r\n":
+            if line != "\n":
                 data_loop.append(line)
     # was getting 115, now getting 225 and including blank lines? # solved
     # logic works in list comp but not loop? # solved
