@@ -167,7 +167,8 @@ def main():
     print(f"\nChallenge 04: map: last line = {data_map[-1]}") # getting 225 & boolean?
 
     data_comp = [line for line in open(filepath) if line != "\n"]
-    # this works in comp but not loop?
+    # this works in comp but not loop? # why different blank characters? windows v mac?
+    # I am on a windows machine
     print(f"\nChallenge 04: comp: data length = {len(data_comp)}")
     print(f"\nChallenge 04: comp: last line = {data_comp[-1]}")
     # CHALLENGE 05: CLEAN DATA
@@ -189,9 +190,9 @@ def main():
     print(f"\nChallenge 05: loop: last line = {data_cleaned_loop[-1]}")
 
     # map()
-    # data_cleaned_map = list(map(lambda x: x.translate(translator), data_map))
+    data_cleaned_map = list(map(lambda x: x.translate(translator), data_comp))
 
-    # print(f"\nChallenge 05: map(): last line = {data_cleaned_map[-1]}")
+    print(f"\nChallenge 05: map(): last line = {data_cleaned_map[-1]}")
 
     # list comprehension
     data_cleaned_comp = [
@@ -204,26 +205,29 @@ def main():
 
     # CHALLENGE 06: SEARCH (FILTER())
 
-    # search_term = 'apartheid'
+    search_term = 'apartheid'
     # search_term = 'white supremacy'
     # search_term = 'communist'
     # search_term = 'freedom charter'
 
     # filter()
-    # lines = list(filter(lambda x: x, data_cleaned_loop))
+    # lines = list(filter(function, data_cleaned_loop))
 
-    # print(f"\nChallenge 06: filter: search len = {len(lines)}")
-    # print(f"\nChallenge 06: filter: search")
-    # for line in lines:
-        # print(f"\n{line}")
+    # filter() with lambda:
+    lines = list(filter(lambda x: search_term in x, data_cleaned_loop))
+
+    print(f"\nChallenge 06: filter lambda: search len = {len(lines)}")
+    print(f"\nChallenge 06: filter lambda: search")
+    for line in lines:
+        print(f"\n{line}")
 
     # list comprehension
-    # lines = []
+    lines = [line for line in data_cleaned_loop if search_term in line]
 
-    # print(f"\nChallenge 06: comp: search len = {len(lines)}")
-    # print(f"\nChallenge 06: comp: search")
-    # for line in lines:
-        # print(f"\n{line}")
+    print(f"\nChallenge 06: comp: search len = {len(lines)}")
+    print(f"\nChallenge 06: comp: search")
+    for line in lines:
+        print(f"\n{line}")
 
 
 if __name__ == '__main__':
