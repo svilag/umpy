@@ -152,7 +152,7 @@ def main():
 
     with open(filepath, 'r', newline='', encoding='utf-8') as file_obj:
         for line in file_obj:
-            if line != "\n":
+            if line.strip():
                 data_loop.append(line)
     # was getting 115, now getting 225 and including blank lines? # solved
     # logic works in list comp but not loop? # solved
@@ -161,13 +161,15 @@ def main():
     print(f"\nChallenge 04: loop: data length = {len(data_loop)}")
     print(f"\nChallenge 04: loop: last line = {data_loop[-1]}")
 
-    data_map = list(map(lambda x: x != "\n", open(filepath))) #list of boolean values ?
+    data_map = list(map(lambda x: x.strip(), open(filepath))) #list of boolean values ?
     # returning whether each line is empty rather than line content ?
     print(f"\nChallenge 04: map: data length = {len(data_map)}")
     print(f"\nChallenge 04: map: last line = {data_map[-1]}") # getting 225 & boolean?
 
-    data_comp = [line for line in open(filepath) if line != "\n"]
-    # this works in comp but not loop? # why different blank characters? windows v mac?
+    # data_comp = [line for line in open(filepath) if line != "\n"] # this works but # file doesn't close
+    with open(filepath, 'r', newline='', encoding='utf-8') as file_obj:
+        data_comp = [line.strip() for line in file_obj.readlines() if line.strip()] #better way # file closes
+    # this works in comp but not loop? # why different blank characters? windows v mac? #solved
     # I am on a windows machine
     print(f"\nChallenge 04: comp: data length = {len(data_comp)}")
     print(f"\nChallenge 04: comp: last line = {data_comp[-1]}")
