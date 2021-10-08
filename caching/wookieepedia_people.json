@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Chewbacca",
+    "birth_year": "200 BBY",
+    "height": "230",
+    "mass": "112",
+    "homeworld": "https://swapi.py4e.com/api/planets/14/",
+    "species": ["https://swapi.py4e.com/api/species/3/"],
+    "force_sensitive": false
+  },
+  {
+    "name": "Finn",
+    "birth_year": "11 ABY",
+    "height": "178",
+    "mass": "73",
+    "homeworld": null,
+    "species": ["https://swapi.py4e.com/api/species/1/"],
+    "force_sensitive": false
+  },
+  {
+    "name": "Han Solo",
+    "birth_year": "32 BBY",
+    "height": "180",
+    "mass": "80",
+    "homeworld": "https://swapi.py4e.com/api/planets/22/",
+    "species": ["https://swapi.py4e.com/api/species/1/"],
+    "force_sensitive": false
+  },
+  {
+    "name": "Kylo Ren",
+    "birth_year": "5 ABY",
+    "height": "189",
+    "mass": "89",
+    "homeworld": "https://swapi.py4e.com/api/planets/32/",
+    "species": ["https://swapi.py4e.com/api/species/1/"],
+    "force_sensitive": true
+  },
+  {
+    "name": "Leia Organa",
+    "birth_year": "19 BBY",
+    "height": "155",
+    "mass": "51",
+    "homeworld": "https://swapi.py4e.com/api/planets/2/",
+    "species": ["https://swapi.py4e.com/api/species/1/"],
+    "force_sensitive": true
+  },
+  {
+    "name": "Luke Skywalker",
+    "birth_year": "19 BBY",
+    "height": "172",
+    "mass": "73",
+    "homeworld": "https://swapi.py4e.com/api/planets/1/",
+    "species": ["https://swapi.py4e.com/api/species/1/"],
+    "force_sensitive": true
+  },
+  {
+    "url": "https://starwars.fandom.com/wiki/Lor_San_Tekka",
+    "name": "Lor San Tekka",
+    "birth_year": null,
+    "height": "185",
+    "mass": null,
+    "homeworld": "https://swapi.py4e.com/api/planets/61/",
+    "species": ["https://swapi.py4e.com/api/species/1/"],
+    "force_sensitive": false
+  },
+  {
+    "name": "Poe Dameron",
+    "birth_year": "2 ABY",
+    "height": "172",
+    "mass": "80",
+    "homeworld": "https://swapi.py4e.com/api/planets/3/",
+    "species": ["https://swapi.py4e.com/api/species/1/"],
+    "force_sensitive": false
+  },
+  {
+    "name": "Rey",
+    "birth_year": "15 ABY",
+    "height": "170",
+    "mass": "54",
+    "homeworld": "https://swapi.py4e.com/api/planets/61/",
+    "species": ["https://swapi.py4e.com/api/species/1/"],
+    "force_sensitive": true
+  }
+]
