@@ -1,0 +1,35 @@
+{
+  "url": "https://swapi.py4e.com/api/people/5/",
+  "name": "Leia Organa",
+  "birth_year": "19 BBY",
+  "height": 155.0,
+  "mass": 51.0,
+  "homeworld": {
+    "url": "https://swapi.py4e.com/api/planets/2/",
+    "name": "Alderaan",
+    "region": "Core Worlds",
+    "sector": "Alderaan sector",
+    "suns": 1,
+    "moons": 0,
+    "orbital_period_days": 364.0,
+    "diameter_km": 12500,
+    "gravity": "1 standard",
+    "climate": [
+      "Temperate"
+    ],
+    "terrain": [
+      "Forests",
+      "Mountains",
+      "Plains"
+    ],
+    "population": 2000000000
+  },
+  "species": {
+    "url": "https://swapi.py4e.com/api/species/1/",
+    "name": "Human",
+    "classification": "mammal",
+    "designation": "sentient",
+    "language": "Galactic Basic"
+  },
+  "force_sensitive": true
+}

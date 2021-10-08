@@ -1,0 +1,24 @@
+{
+  "url": "https://swapi.py4e.com/api/starships/77/",
+  "name": "X-wing",
+  "model": "T-70 X-wing",
+  "starship_class": "Starfighter",
+  "manufacturer": "Incom Corporation",
+  "length": 12.49,
+  "max_atmosphering_speed": 1100,
+  "hyperdrive_rating": 1.0,
+  "MGLT": 110,
+  "armament": [
+    "4 x Taim & Bak KX12 laser cannons",
+    "2 x Krupx MG7-A torpedo launchers",
+    "8 x Miniaturized Krupx MG7-A proton torpedoes",
+    "4 x Ion bombs",
+    "1 x BlasTech Ax-190-B blaster cannon (undercarriage-mounted)"
+  ],
+  "crew": 1,
+  "crew_members": null,
+  "passengers": 0,
+  "passengers_on_board": null,
+  "cargo_capacity": 110,
+  "consumables": "1 week"
+}

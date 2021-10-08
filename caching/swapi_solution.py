@@ -3,6 +3,8 @@ import json
 import os
 import requests
 
+CACHE_NAME = 'cache.json' # constants are in ALL CAPS, no NOT change, and are GLOBAL
+
 
 class Crew:
     """Representation of a Starship or Vehicle crew.
@@ -588,7 +590,7 @@ def create_person(data, planets=None):
 
     # Get, combine, clean data, and instantiate Planet instance
     if data.get('homeworld'):
-        homeworld_data = get_swapi_resource(data['homeworld'])
+        homeworld_data = get_swapi_resource(CACHE_NAME, data['homeworld'])
 
         if planets:
             for planet in planets:
@@ -600,7 +602,7 @@ def create_person(data, planets=None):
 
     # Get, clean data, and instantiate a new Species instance
     if data.get('species'):
-        species_data = get_swapi_resource(data['species'][0])
+        species_data = get_swapi_resource(CACHE_NAME, data['species'][0])
         person.species = create_species(species_data)
 
     # Note that falsy values (e.g., None, False, 0) returns False
@@ -749,13 +751,35 @@ def create_starship(data):
     return starship
 
 
-def get_swapi_resource(url, params=None, timeout=10):
+def create_cache_item_id(url, params):
+    # synthetic key
+    pattern = ''
+    if params:
+        for key, val in params.items():
+            pattern += '|' + str(key) + '-' + str(val)
+            # f": {str(key)} - {str(val)}"
+        url += pattern
+        return url
+    else:
+        return url
+
+
+def get_cache(filepath):
+
+    try:
+        return read_json(filepath)
+    except:
+        return {}
+
+
+def get_swapi_resource(filepath, url, params=None, timeout=10):
     """Returns a response object decoded into a dictionary. If query string < params > are
     provide the response object body is in the form on an "envelope" with the data payload of
     one or more SWAPI entities to be found in ['results'] list; otherwise, response object
     body is returned as a single dictionary representation of the SWAPI entity.
 
     Parameters:
+        filepath (str): the path to the cache file.
         url (str): a url that specifies the resource.
         params (dict): optional dictionary of querystring arguments.
         timeout (int): timeout value in seconds
@@ -764,10 +788,21 @@ def get_swapi_resource(url, params=None, timeout=10):
         dict: dictionary representation of the decoded JSON.
     """
 
-    if params:
-        return requests.get(url, params, timeout=timeout).json()
+    swapi_cache = get_cache(filepath)
+    cache_item_id = create_cache_item_id(url, params)
+    print(cache_item_id)
+    if cache_item_id in swapi_cache.keys():
+        return swapi_cache[cache_item_id]
     else:
-        return requests.get(url, timeout=timeout).json()
+        if params:
+            response = requests.get(url, params, timeout=timeout).json()
+            data = response['results'][0] # assume only one record
+        else:
+            data = requests.get(url, timeout=timeout).json()
+
+        swapi_cache[cache_item_id] = data
+        write_json(filepath, swapi_cache)
+        return data
 
 
 def read_csv_into_dicts(filepath, delimiter=','):
@@ -864,7 +899,7 @@ def main():
     write_json(filepath, inhabited_planets)
 
     # CHALLENGE 02 SPECIES
-    wookiee_data = get_swapi_resource(f"{endpoint}/species", {'search': 'wookiee'})['results'][0]
+    wookiee_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/species", {'search': 'wookiee'})
     wookiee = create_species(wookiee_data)
 
     # filepath = os.path.join(abs_path, 'stu_swapi_species_wookiee.json')
@@ -873,7 +908,7 @@ def main():
 
 
     # CHALLENGE 03 PLANET
-    hoth_data = get_swapi_resource(f"{endpoint}/planets", {'search': 'hoth'})['results'][0]
+    hoth_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/planets", {'search': 'hoth'})
 
     # filepath = os.path.join(abs_path, 'wookieepedia_planets.csv')
     filepath = 'wookieepedia_planets.csv'
@@ -888,7 +923,7 @@ def main():
 
 
     # CHALLENGE 04 DROID
-    r2_d2_data = get_swapi_resource(f"{endpoint}/people", {'search': 'r2-d2'})['results'][0]
+    r2_d2_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/people", {'search': 'r2-d2'})
 
     # filepath = os.path.join(abs_path, 'wookieepedia_droids.json')
     filepath = 'wookieepedia_droids.json'
@@ -903,7 +938,7 @@ def main():
 
 
     # CHALLENGE 05 PERSON
-    leia_data = get_swapi_resource(f"{endpoint}/people", {'search': 'leia organa'})['results'][0]
+    leia_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/people", {'search': 'leia organa'})
 
     # filepath = os.path.join(abs_path, 'wookieepedia_people.json')
     filepath = 'wookieepedia_people.json'
@@ -923,7 +958,7 @@ def main():
 
 
     # CHALLENGE 07 STARSHIP
-    x_wing_data = get_swapi_resource(f"{endpoint}/starships", {'search': 'T-70 x-wing'})['results'][0]
+    x_wing_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/starships", {'search': 'T-70 x-wing'})
 
     # filepath = os.path.join(abs_path, 'wookieepedia_starships.csv')
     filepath = 'wookieepedia_starships.csv'
@@ -938,16 +973,16 @@ def main():
 
 
     # CHALLENGE 08 MISSION TO JAKKU
-    poe_data = get_swapi_resource(f"{endpoint}/people", {'search': 'poe'})['results'][0]
+    poe_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/people", {'search': 'poe'})
     poe_data.update(wookiee_people[7])
     poe = create_person(poe_data, wookiee_planets)
 
-    bb8_data = get_swapi_resource(f"{endpoint}/people", {'search': 'bb8'})['results'][0]
+    bb8_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/people", {'search': 'bb8'})
     bb8_data.update(wookiee_droids[0])
     bb8 = create_droid(bb8_data)
 
     # Special instructions: get Jakku data and clean
-    jakku_data = get_swapi_resource(f"{endpoint}/planets", {'search': 'jakku'})['results'][0]
+    jakku_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/planets", {'search': 'jakku'})
     jakku_data.update(wookiee_planets[7])
     jakku = create_planet(jakku_data)
 
@@ -992,15 +1027,15 @@ def main():
 
 
     # CHALLENGE 10 ESCAPE FROM JAKKU
-    rey_data = get_swapi_resource(f"{endpoint}/people", {'search': 'rey'})['results'][0]
+    rey_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/people", {'search': 'rey'})
     rey_data.update(wookiee_people[-1])
     rey = create_person(rey_data, wookiee_planets)
 
-    finn_data = get_swapi_resource(f"{endpoint}/people", {'search': 'finn'})['results'][0]
+    finn_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/people", {'search': 'finn'})
     finn_data.update(wookiee_people[1])
     finn = create_person(finn_data, wookiee_planets)
 
-    m_falcon_data = get_swapi_resource(f"{endpoint}/starships", {'search': 'falcon'})['results'][0]
+    m_falcon_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/starships", {'search': 'falcon'})
     m_falcon_data.update(wookiee_starships[-1])
     m_falcon = create_starship(m_falcon_data)
 
@@ -1018,11 +1053,11 @@ def main():
 
 
     # CHALLENGE 11 JOURNEY TO TAKODANA
-    han_solo_data = get_swapi_resource(f"{endpoint}/people", {'search': 'han solo'})['results'][0]
+    han_solo_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/people", {'search': 'han solo'})
     han_solo_data.update(wookiee_people[2])
     han_solo = create_person(han_solo_data, wookiee_planets)
 
-    chewie_data = get_swapi_resource(f"{endpoint}/people", {'search': 'chewbacca'})['results'][0]
+    chewie_data = get_swapi_resource(CACHE_NAME, f"{endpoint}/people", {'search': 'chewbacca'})
     chewie_data.update(wookiee_people[0])
     chewie = create_person(chewie_data, wookiee_planets)
 
